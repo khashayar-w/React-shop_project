@@ -1,24 +1,41 @@
-import { useContext, useState } from "react";
-import { ProfileContext } from "../components/context";
+import { useContext } from "react";
+import { ShopContext } from "../App";
 
-const CartPage = () => {
-    const {products}=useContext(ProfileContext)
-    const[shoppingList,setShoppingList]=useState(products)
-        
-        return(
-            <div className="row">
-                {products.map((product)=>{
-                    if(product.count >0){
-                        return(
-                            <div className="col-4 text-bg-warning m-2 text-center p-5">
-                                <span>product you choose:{product.name}</span>
-                                <span>how many you pick:{product.count}</span>
-                            </div>
-                        )
-                    }else return;
-                })}
-            </div>
-        )
 
+
+
+const ShoppingCart  = () => {
+    //*state
+    const {shopItems,setShopItems}=useContext(ShopContext)
+    //*functions
+    const handleDelete=(index)=>{
+        const newproducts = [...shopItems]
+        newproducts[index].count = 0
+        setShopItems(newproducts)
+
+    }
+    return (
+      <>
+        <h1>your Shopping Cart</h1>
+        <div className="row">
+            {shopItems.map((shopItem,index)=>{
+                if(shopItem.count > 0){
+                    return (
+                      <div className="col-4">
+                          <img style={{width:'300px',height:'60%',borderRadius:'25%'}} src={shopItem.img} alt="" />
+                          <h4>{shopItem.name}</h4>
+                          <h5>{shopItem.price}</h5>
+                          <h4> cart:{shopItem.count}</h4>
+                          <button onClick={()=>handleDelete(index)} className="btn btn-lg btn-danger">
+                            Delete Item
+                          </button>
+                      </div>
+                    );
+                }
+            })}
+        </div>
+      </>
+    );
 }
-export default CartPage;
+ 
+export default ShoppingCart;

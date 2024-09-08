@@ -1,27 +1,43 @@
-import { BrowserRouter as Router , Route , Routes } from "react-router-dom";
+import {BrowserRouter as Br ,Routes,Route} from "react-router-dom"
+import Login from "./Login/login";
+import ShoppingCart from "./cart/Cart-page";
 import HomePage from "./shop/Home_page";
-import CartPage from "./cart/Cart-page";
-import NavBar from "./components/Navbar";
-import {  useState } from "react";
-
-import { ProfileContext } from "./components/context";
-
-
+import Navbar from "./components/Navbar";
+import Store from "./store/store";
+import Support from "./support/support";
+import { useState,createContext } from "react";
+//* imgs for our products
+import img1 from "./img/img1.jpg"
+import img2 from "./img/img2.jpg"
+import img3 from "./img/img3.jpg"
+//* context
+export const ShopContext = createContext()
 const App = () => {
-    const [products,setProducts]=useState([])
-    return (
-      <div className="m-2 text-center">
-        <ProfileContext.Provider value={{products,setProducts}}>
-            <Router>
-                <NavBar />
-                <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/cart" element={<CartPage />} />
-                </Routes>
-            </Router>
-        </ProfileContext.Provider>
-      </div>
-    );
+    //*state of products
+    const[shopItems,setShopItems]=useState([
+        {id:1,name:'curology',price:"700$",img:img1},
+        {id:2,name:'perfume',price:'1800$',img:img2},
+        {id:3,name:'smoothy',price:"20$",img:img3},
+    ]);
+    //*state for count of shopping cart
+    const[countOfproducts,setCountOfProducts]=useState([])
+    return ( 
+        <div className="text-center">
+            <ShopContext.Provider value={{countOfproducts,setCountOfProducts,shopItems,setShopItems}}>
+                <Br>
+                <Navbar/>
+                    <Routes>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/store" element={<Store/>}/>
+                        <Route path="/cart" element={<ShoppingCart/>}/>
+                        <Route path="/support" element={<Support/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="*" element={<h2>Nothing Found...</h2>}/>
+                    </Routes>
+                </Br>
+            </ShopContext.Provider>
+        </div>
+     );
 }
  
 export default App;
