@@ -17,11 +17,11 @@ const ShoppingCart  = () => {
     return (
       <>
         <h1>your Shopping Cart</h1>
-        <div className="row">
+        <div className="row  p-5 m-3">
             {shopItems.map((shopItem,index)=>{
                 if(shopItem.count > 0){
                     return (
-                      <div className="col-4">
+                      <div className="col-4 m-1 p-5"style={{borderRadius:"25px",boxShadow:"0px 2px 8px 0px rgba(0,0,0,.2)"}}>
                           <img style={{width:'300px',height:'60%',borderRadius:'25%'}} src={shopItem.img} alt="" />
                           <h4>{shopItem.name}</h4>
                           <h5>{shopItem.price}</h5>

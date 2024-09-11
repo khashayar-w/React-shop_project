@@ -1,0 +1,86 @@
+/*! I know people usually create one file to style components, but since this project wasn't supposed to focus on styling at first, I just used it as a warm-up. Later, I decided to add styles for my own convenience, so I created a separate CSS file for each section. */
+/**for errors */
+p{
+    color: red;
+   
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+input{
+    outline: none;
+    border-radius: 25px;
+    padding: 4px;
+    padding: 8px;
+}
+input:hover{
+    border: solid orange;
+}
+.body{
+    margin: 0;
+    background-image:url(./img/starry-night-sky-clouds-anime-art-scenery-4k-wallpaper-uhdpaper.com-9@0@j.jpg) ;
+    background-size:cover;
+    height: 100vh;
+}
+
+
+.create-container{
+    height: 100vh;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0px auto;
+    
+}
+.create-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    padding: 30px;
+    border-radius: 25px;
+    background:white;
+    max-height: 100vh;
+   
+   
+  
+    
+}
+.create-form > *{
+    margin-bottom: 12px;
+
+    
+}
+.form-name >*{
+    padding: 8px;
+    width: 300px;
+    margin: 0px 10px;
+    border-radius: 25px;
+}
+
+
+.email > * {
+    padding: 8px;
+    width: 400px;
+    
+}
+input[type=submit]{
+    color: white;
+    background: orange;
+    
+    padding :10px;
+}
+
+input[type=submit]:hover{
+    width: 150px;
+    
+}

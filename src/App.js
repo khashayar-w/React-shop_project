@@ -1,7 +1,7 @@
 import {BrowserRouter as Br ,Routes,Route} from "react-router-dom"
 import Login from "./Login/login";
 import ShoppingCart from "./cart/Cart-page";
-import HomePage from "./shop/Home_page";
+import HomePage from "./Home/Home_page";
 import Navbar from "./components/Navbar";
 import Store from "./store/store";
 import Support from "./support/support";
@@ -10,6 +10,7 @@ import { useState,createContext } from "react";
 import img1 from "./img/img1.jpg"
 import img2 from "./img/img2.jpg"
 import img3 from "./img/img3.jpg"
+import CreateAccount from "./Login/Create_account";
 //* context
 export const ShopContext = createContext()
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
                         <Route path="/store" element={<Store/>}/>
                         <Route path="/cart" element={<ShoppingCart/>}/>
                         <Route path="/support" element={<Support/>}/>
+                        <Route path="/account" element={<CreateAccount/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="*" element={<h2>Nothing Found...</h2>}/>
                     </Routes>

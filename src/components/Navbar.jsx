@@ -24,8 +24,8 @@ const Navbar = () => {
       <React.Fragment>
         <nav class="navbar navbar-expand-lg bg-danger ">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              Khashayar
+            <a class="navbar-brand" href="#" style={{fontWeight:'bold'}}>
+              @Khashayar
             </a>
             <button
               class="navbar-toggler"
@@ -41,7 +41,7 @@ const Navbar = () => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <Link class="nav-link active" aria-current="page" to="/">
+                  <Link style={{color:'white'}} class="nav-link active" aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
@@ -54,13 +54,19 @@ const Navbar = () => {
                     Store
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link style={{color:"white"}} className="nav-link" to="/login">
+                    login
+                  </Link>
+                </li>
                 <li class="nav-item">
-                  <Link class="nav-link" to="/support">
+                  <Link  class="nav-link" to="/support">
                     Support
                   </Link>
                 </li>
                 <li class="nav-item dropdown">
-                  <Link
+                  <Link 
+                    style={{color:'white'}}
                     onClick={visible}
                     class="nav-link dropdown-toggle"
                     role="button"
@@ -76,9 +82,9 @@ const Navbar = () => {
                           </a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
-                            More
-                          </a>
+                          <Link style={{color:'white'}} className="nav-link" to="/account">
+                            Create_Account
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -87,7 +93,7 @@ const Navbar = () => {
                 <li class="nav-item">
                   <Link class="nav-link " aria-disabled="true" to="/cart">
                     <FontAwesomeIcon icon={faBagShopping} />
-                    <span className="cart-item-count">{itemCount|| 0}</span>
+                    <span className="cart-item-count">{itemCount || 0}</span>
                   </Link>
                 </li>
               </ul>

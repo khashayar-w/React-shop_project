@@ -20,12 +20,12 @@ const Store = () => {
     return ( 
         <> 
             <h1>Store</h1>
-            <div className="row">
+            <div className="row  m-5">
                     {
                         shopItems.map((shopItem,index)=>{
                             return(
-                                <div className="col-4">
-                                    <img style={{ height:"60%",width:"300px",borderRadius:"25%"}} src={shopItem.img} alt="" />
+                                <div className="col-3 p-5 m-1 " style={{borderRadius:'25px',boxShadow:'0px 2px 8px 0px rgba(0,0,0,.2)'}}>
+                                    <img style={{ height:"70%",width:"300px",borderRadius:"25%"}} src={shopItem.img} alt="" />
                                     <h4>{shopItem.name}</h4>
                                     <h5>{shopItem.price}</h5>
                                     <h4 className="text-warning text-bg-dark">Cart{shopItem.count||0}</h4>

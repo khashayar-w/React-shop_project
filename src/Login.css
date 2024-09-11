@@ -1,0 +1,72 @@
+/*! I know people usually create one file to style components, but since this project wasn't supposed to focus on styling at first, I just used it as a warm-up. Later, I decided to add styles for my own convenience, so I created a separate CSS file for each section. */
+
+
+
+
+
+.body{
+    height: 100vh;
+    background-image: url(./img/login.svg);
+    background-color: grey;
+    
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    
+    
+}
+.form{
+    height: 50vh;
+    display: flex;
+    position: relative;
+    
+    flex-direction: column;
+    justify-content: center;
+   align-items: center; 
+}
+
+
+.form > *{
+    margin: 12px;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+.form > input:hover{
+    
+    
+    transition:all ease-in  ;
+    width: 300px;
+}
+/* .form button{
+    background:#e84118 ;
+    background-size: cover;
+    color: white;
+}
+.form button:hover{
+    width: 150px;
+} */
+
+
+.form > a{
+    
+    background-color: white;
+    background-size: cover;
+}
+.form  span{
+    font-size: 20px;
+    color:white;
+    background-color: #3498db;
+    
+}
+
+.form > span > *{
+    
+    color: white;
+    background:#3498db;
+    background-size: text cover;
+}
